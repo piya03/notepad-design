@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Spicy+Rice"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <button class="back back1">Prev</button>
+    <div class="container">
+      <div class="page test cover-page" data-pageno="1" style="z-index:1">
+        <div class="cover-text">
+          <span> My Notes </span>
+          <span class="made-by"> Made by Priyanka </span>
+          <span style="color: red"> &#10084; ☕ 🍒 </span>
+        </div>
+      </div>
+      <div class="page test" data-pageno="2">
+        <div class="notes">notes</div>
+        <span class="page-no-section"><span class ="date"></span> <span class="pageno">1</span> </span>
+
+        <div class="line-container">
+          <input type="text" class="write write1" maxlength="48" />
+          <input type="text" class="write " maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <div class="left-line"></div>
+        </div>
+      </div>
+      <div class="page page1" data-pageno="3">
+        <div class="notes">notes</div>
+        <span class="page-no-section"><span class ="date"></span><span class="pageno">2</span> </span>
+        <div class="line-container">
+          <input type="text" class="write write1" maxlength="48" />
+          <input type="text" class="write " maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <div class="left-line"></div>
+        </div>
+      </div>
+      <div class="page page2" data-pageno="4">
+        <div class="notes">notes</div>
+        <span class="page-no-section"> <span class ="date"></span><span class="pageno">3</span></span>
+        <div class="line-container">
+          <input type="text" class="write write1" maxlength="48" />
+          <span></span> <input type="text" class="write " maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <div class="left-line"></div>
+        </div>
+      </div>
+      <div class="page page3" data-pageno="5">
+        <div class="notes">notes</div>
+        <span class="page-no-section"><span class ="date"></span><span class="pageno">4</span> </span>
+        <div class="line-container">
+          <input type="text" class="write write1" maxlength="48" />
+          <span></span> <input type="text" class="write " maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <div class="left-line"></div>
+        </div>
+      </div>
+      <div class="page page4" data-pageno="6">
+        <div class="notes">notes</div>
+        <span class="page-no-section"> <span class ="date"></span><span class="pageno">5</span></span>
+        <div class="line-container">
+          <input type="text" class="write write1" maxlength="48" />
+          <span></span> <input type="text" class="write " maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <input type="text" class="write" maxlength="48" />
+          <div class="left-line"></div>
+        </div>
+      </div>
+      <div class="page page4 end-page" style="z-index:-1" data-pageno="7">
+        <div class="cover-text">
+          <span> Made by Priyanka </span>
+          <span style="color: red"> 🏀 🎯 🍔 </span>
+        </div>
+      </div>
+    </div>
+    <button class="next">Next</button>
+    <script>
+      function resetZindexes() {
+        const pageElements = document.querySelectorAll("[data-pageno]");
+        for (var i = 0; i < pageElements.length; i++) {
+          pageElements[i].style.zIndex = "0";
+        }
+      }
+      let noOfPages = 7;
+      let activePageNo = 1;
+      const nextBtn = document.getElementsByClassName("next")[0];
+      const backBtn = document.getElementsByClassName("back")[0];
+
+      nextBtn.onclick = function() {
+        const pageElements = document.querySelectorAll("[data-pageno]");
+        const activepage = pageElements[activePageNo - 1];
+        const nextpage = pageElements[activePageNo];
+        if (activepage) {
+          activepage.style.transformOrigin = "0 0 0";
+          activepage.style.transform = "rotateY(-180deg)";
+        }
+      if (activePageNo == 7){
+        for(var a = 0; a< pageElements.length; a++){
+          pageElements[a].classList.add("withanimatebook")
+
+        }
+
+        setTimeout(function(){
+          activePageNo= 1;
+          resetZindexes();
+          pageElements[0].style.zIndex = 1;
+          for(var a = 0; a< pageElements.length; a++){
+          pageElements[a].style.transform="rotateY(0deg)"
+        }
+        },500)
+      } else {
+        for(var a = 0; a< pageElements.length; a++){
+          pageElements[a].classList.remove("withanimatebook")
+        }
+      }
+        if (nextpage !== undefined) {
+          resetZindexes();
+          nextpage.style.zIndex = (activePageNo).toString();
+          activepage.style.zIndex = (activePageNo + 1).toString();
+          if(activePageNo === noOfPages - 1) {
+            activepage.style.zIndex = (activePageNo).toString();
+            nextpage.style.zIndex = (activePageNo + 1).toString();
+          }
+          // setTimeout(function() {
+          //   nextpage.style.zIndex = activePageNo.toString();
+          //   activepage.style.zIndex = (activePageNo - 1).toString();
+          // }, 1000);
+        }
+        if (activePageNo > noOfPages) {
+          return;
+        }
+        activePageNo++;
+      };
+      backBtn.onclick = function() {
+        const pageElementsBack = document.querySelectorAll("[data-pageno]");
+        const activepageBack = pageElementsBack[activePageNo - 2];
+
+        if (activePageNo === 1) {
+          return;
+        }
+        activepageBack.style.transformOrigin = "0 100% 0";
+        activepageBack.style.transform = "rotateY(0deg)";
+        resetZindexes();
+        activepageBack.style.zIndex = activePageNo.toString();
+
+        activePageNo--;
+      };
+
+      function showDate(){
+        var newDate = new Date().toDateString()
+        const dateElemArr = document.getElementsByClassName("date");
+        for(var a = 0; a< dateElemArr.length; a++){
+          dateElemArr[a].innerHTML = newDate;
+        }
+        
+      }
+      showDate()
+    </script>
+  </body>
+</html>
